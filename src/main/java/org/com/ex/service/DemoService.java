@@ -82,6 +82,7 @@ public class DemoService {
 
     private MovieDto toMovieDto(MovieEntity entity) {
         return MovieDto.builder()
+                .id(entity.getId())
                 .name(entity.getName())
                 .releaseDate(entity.getReleaseDate())
                 .rating(entity.getRating())

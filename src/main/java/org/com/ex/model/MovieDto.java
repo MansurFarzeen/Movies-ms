@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 public class MovieDto {
+    private Long id;
     private String name;
     private LocalDate releaseDate;
     private double rating;
