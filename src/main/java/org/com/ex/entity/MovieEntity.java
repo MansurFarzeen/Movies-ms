@@ -4,36 +4,35 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.com.ex.model.MovieType;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "movies")
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
+@Builder
 public class MovieEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    @Column(nullable = false, name = "name")
-    private String name;
+    @Column(name = "imdbID")
+    private String imdbID;
 
-    @Column(name = "release_date")
-    private LocalDate releaseDate;
+    @Column(name = "title")
+    private String title;
 
-    @Column(nullable = false, name = "rating")
-    private double rating;
+    @Column(name = "release_year")
+    private String year;
 
-    @Column(nullable = false, name = "genre")
-    private String genre;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
+    private MovieType type;
 
-    @Column(nullable = false, name = "director")
-    private String director;
-
-    @Column(nullable = false, name = "duration_minutes")
-    private int durationMinutes;
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }

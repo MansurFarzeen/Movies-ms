@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 @Builder
-public class MovieInfoDto {
+public class MovieInfoResponseDto {
     private Long id;
-    private String name;
-    private double rating;
-    private String genre;
+    private String title;
+    private String year;
+    private MovieType type;
 }
